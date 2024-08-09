@@ -1,0 +1,86 @@
+{{ fontawesome_html() }}
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+    {{ super() }}
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="container d-flex flex-column flex-wrap justify-content-center align-items-center text-center mt-5">
+		<h1>Build a Maze or Upload a Maze File</h1>
+		{% if layout != None %}
+			<div class="container d-flex flex-row flex-wrap justify-content-center align-items-center text-center my-4 px-3">
+				<div class="col-12 col-md-6 my-3">
+					<h4>Maze:</h4>
+					<div class="container maze-container" id="maze">
+						{% for row in layout.split("\n") %}
+							<div class="maze-line">
+								{% for x in row %}
+									<pre>{{ x }}</pre>
+								{% endfor %} 
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="col-12 col-md-6 my-3">
+					{% if solved != "" and solved != None %}
+						<h4>Solved Maze:</h4>
+						<div class="container maze-container" id="solved">
+							{% for row in solved.split("\n") %}
+								<div class="maze-line">
+									{% for x in row %}
+										{% if x == path %}
+											<pre class="path">{{ x }}</pre>
+										{% else %}
+											<pre>{{ x }}</pre>
+										{% endif %}
+									{% endfor %} 
+								</div>
+							{% endfor %}
+						</div>
+					{% else %}
+						<h3>Maze is not Solvable</h3>
+					{% endif %}
+				</div>
+			</div>
+		{% endif %}	
+		<form action="{{ url_for('make_maze') }}" class="m-3 d-flex flex-column flex-wrap justify-content-start align-items-center" method="POST">
+			<div class="m-2">
+				<span class="p-2">Height: </span>
+				<input class="num-input" type='number' name="height" min="10" max="60" value="10" />
+				<span class="p-2">Width: </span>
+				<input class="num-input" type='number' name="width" min="10" max="60" value="10" />
+			</div>
+			<div class="m-2">
+				<span class="m-2">Start and End Placement: </span>
+				<select class="m-2" name="type">
+					<option selected value="h">Start: top | End: bottom</option>
+					<option value="v">Start: left | End: right</option>
+					<option value="r">Start: random | End: random</option>
+				</select>    
+			</div>
+			<input type="submit" class="btn button m-2" value="Build Maze">
+		</form>
+		<form action="{{ url_for('upload_maze') }}" class="m-3 d-flex flex-row flex-wrap justify-content-center align-items-center" method="POST" enctype="multipart/form-data">
+			<span>Upload Maze File: </span>
+			<input type="file" class="input-file" id="maze-file" name="maze_file" accept=".txt" />
+			<label for="maze-file" class="m-2">Choose a file <i class="fas fa-upload"></i></label>
+			<input type="submit"  class="btn button" value="upload" />
+		</form>
+		<div class="col-12 col-md-8 text-left">
+			<p class="disclamer">
+				<b>Disclamer</b>: maze is built and solved on the server and then saved as a cookie. Because this is not built and saved to a database maze height and width are set for a max of 60 to avoid cookies being to large, but that isn't to say the maze solver or builder couldnt handle larger files. To see the full code of the maze runner checkout the repo: <a href="https://github.com/icarus612/mazeRunner-PY">click here</a> or to see the code for this web app checkout <a href="https://github.com/icarus612/mazeRunner-flask-PY">click here</a>.
+			</p>
+			<h4>
+				Some rules about maze/maze file types:
+			</h4>
+			<ul>
+				<li>files must be .txt files</li>
+				<li>start charecter and end charecter must be different</li>
+				<li>maze must be surrounded by walls (for example hit build maze above)</li>
+				<li>walls and spaces can be anything you like (I just use # and spaces)</li>
+			</ul> 
+		</div>
+	</div>
+
+	
+{% endblock %}

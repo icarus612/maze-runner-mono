@@ -1,0 +1,21 @@
+@import 'styles/theme';
+
+.nav_bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background-color: $primary;
+  color: $white;
+  padding: 5px 10px;
+  box-shadow: 0 0 8px 0px rgba(50,50,50,.5);
+
+  a {
+    margin: 0 10px;
+
+    &:hover {
+      color: $complementary-lt;
+    }
+  }
+}
