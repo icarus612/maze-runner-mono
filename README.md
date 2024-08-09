@@ -4,7 +4,7 @@
 
 This repository is automatically maintained through GitHub Actions. The content here is synced from the [daedalus-mono](https://github.com/icarus612/daedalus-mono) repository. Its primary function is to allow others to see a project/collection of micro-projects that I sometimes work on and am mildly proud of.  
 
-**For the most up-to-date information, issues, and pull requests, please visit the [daedalus-mono](https://github.com/icarus612/daedalus-mono) repository**
+**For the most up-to-date information, issues, and pull requests, please visit the [daedalus-mono](https://github.com/icarus612/daedalus-mono) repository.**
 
 ## Repository Structure
 
