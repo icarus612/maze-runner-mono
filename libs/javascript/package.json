@@ -1,0 +1,22 @@
+{
+  "name": "mazerunner",
+  "version": "1.0.0",
+  "main": "src/lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icarus612/mazeRunner-JS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/icarus612/mazeRunner-JS/issues"
+  },
+  "homepage": "https://github.com/icarus612/mazeRunner-JS#readme",
+  "description": ""
+}
