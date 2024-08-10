@@ -2,8 +2,10 @@
   # Maze Runner Monorepo
   ## Built by: dev.icarus
 
-  Hello there! 👋 I'm dev.icarus, a full-stack developer with a passion for building scalable and efficient applications. This repository serves as a gateway to my diverse range of projects. Here's how you can explore them:
+  ## Notice
 
+  This repository is automatically maintained through GitHub Actions. The content here is synced from the [daedalus-mono](https://github.com/icarus612/daedalus-mono) repository. Its primary function is to allow others to see a project/collection of micro-projects that I sometimes work on and am mildly proud of.  
+  
   ## My Other Projects
 
   Each of my main projects has its own dedicated repository. You can browse them by visiting my [GitHub profile](https://github.com/icarus612). Here's what you can expect:
