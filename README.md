@@ -13,6 +13,7 @@
   - **Code Insights**: Dive into the code to see my coding style and the technologies I work with. Feel free to explore the commit history for a deeper understanding of the development process.
   
   ## Project Structure
+  
   <pre>
   
 maze-runner-mono  
@@ -25,6 +26,7 @@ maze-runner-mono
     └── <a href="/libs/react-js">react-js</a>
 
   </pre>
+
   ## Collaboration
 
   While this repository is not open for collaboration, I'm definitely open to it on other projects if you're interested. If you're looking to contribute to my active open source projects, I'd recommend visiting [The Icarus Project](https://github.com/the-icarus-project). That's where you'll find projects specifically designed for collaboration, complete with all the details and guidelines you need to get started.
