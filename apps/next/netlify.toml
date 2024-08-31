@@ -1,5 +1,0 @@
-
-[build]
-  functions = "functions"
-  publish = ".next"
-  command = "yarn build"
