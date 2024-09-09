@@ -1,0 +1,31 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA', '-f', '/dockerfile', '.']
+
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+  - 'run'
+  - 'deploy'
+  - '$_SERVICE_NAME'
+  - '--image'
+  - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
+  - '--region'
+  - '$_REGION'
+  - '--platform'
+  - 'managed'
+
+images:
+- 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
+
+substitutions:
+  _SERVICE_NAME: maze-runner-next-js-icarus64
+  _REGION: non-regional
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
