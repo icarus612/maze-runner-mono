@@ -27,3 +27,5 @@ images:
 substitutions:
   _SERVICE_NAME: maze-runner-next-js-icarus64
   _REGION: non-regional
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
