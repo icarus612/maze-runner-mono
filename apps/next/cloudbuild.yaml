@@ -1,8 +1,13 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA', '-f', 'apps/next/dockerfile', '.']
-
+  args: 
+    - 'build'
+    - '-t'
+    - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
+    - '-f'
+    - 'apps/next/Dockerfile'
+    - 'apps/next'
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
@@ -11,15 +16,15 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args:
-  - 'run'
-  - 'deploy'
-  - '$_SERVICE_NAME'
-  - '--image'
-  - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
-  - '--region'
-  - '$_REGION'
-  - '--platform'
-  - 'managed'
+    - 'run'
+    - 'deploy'
+    - '$_SERVICE_NAME'
+    - '--image'
+    - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
+    - '--region'
+    - '$_REGION'
+    - '--platform'
+    - 'managed'
 
 images:
 - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
