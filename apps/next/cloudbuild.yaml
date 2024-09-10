@@ -6,7 +6,7 @@ steps:
     - '-t'
     - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
     - '-f'
-    - 'apps/next/Dockerfile'
+    - 'apps/next/dockerfile'
     - 'apps/next'
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
