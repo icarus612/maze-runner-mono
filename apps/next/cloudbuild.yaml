@@ -35,3 +35,4 @@ substitutions:
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
   logging: CLOUD_LOGGING_ONLY
+  
