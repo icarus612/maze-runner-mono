@@ -30,7 +30,7 @@ images:
 - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
 
 substitutions:
-  _SERVICE_NAME: maze-runner-next-js-icarus64
+  _SERVICE_NAME: maze-runner-next
   _REGION: us-central1
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
