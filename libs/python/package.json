@@ -1,10 +1,10 @@
 {
-  "name": "app.flask.maze-runner",
+  "name": "lib.python.maze-runner",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "install": "py-install",
-    "build": "py-build",
+    "build": "py-build", 
     "dev": "py-dev",
     "lint": "py-lint"
   },
@@ -12,6 +12,6 @@
     "lib.bash.build-tools": "workspace:*"
   },
   "bin": {
-    "maze-runner-flask": "main.py"
+    "py-maze-runner": "bin/solver.py"
   }
 }

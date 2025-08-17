@@ -1,8 +1,11 @@
 {
-  "name": "mazerunner",
+  "name": "lib.javascript.node.maze-runner",
   "version": "1.0.0",
   "main": "src/lib/index.js",
   "scripts": {
+    "dev": "node src/index.js",
+    "build": "echo 'No build configured'",
+    "lint": "echo 'No lint configured'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
