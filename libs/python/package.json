@@ -5,8 +5,8 @@
   "scripts": {
     "install": "py-install",
     "build": "py-build", 
-    "dev": "py-dev",
-    "lint": "py-lint"
+    "lint": "py-lint",
+    "dev": "py-dev"
   },
   "devDependencies": {
     "lib.bash.build-tools": "workspace:*"
