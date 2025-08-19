@@ -1,6 +1,10 @@
 from flask import Flask, render_template, url_for, request, redirect, make_response
 import requests
 import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../libs/python"))
+from flask_utils.port_finder import find_available_port
 from modules.maze import Maze
 from modules.runner import Runner
 from flask_bootstrap import Bootstrap
@@ -80,5 +84,10 @@ def make_maze():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, port=port)
+    try:
+        port = find_available_port(3000, 3100)
+        print(f"Starting Flask app on port {port}")
+        app.run(debug=True, port=port)
+    except RuntimeError as e:
+        print(f"Error: {e}")
+        sys.exit(1)
