@@ -23,6 +23,7 @@ maze-runner-mono
 │   ├── <a href="/apps/flask">flask</a>
 │   └── <a href="/apps/next">next</a>
 └── libs
+    ├── <a href="/libs/golang">golang</a>
     ├── <a href="/libs/javascript">javascript</a>
     ├── <a href="/libs/python">python</a>
     └── <a href="/libs/react-js">react-js</a>

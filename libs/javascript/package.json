@@ -1,11 +1,13 @@
 {
   "name": "lib.javascript.node.maze-runner",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
   "main": "src/lib/index.js",
   "scripts": {
     "dev": "node src/index.js",
     "build": "echo 'No build configured'",
-    "lint": "echo 'No lint configured'",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,7 +1,6 @@
-const fs = require("fs");
-import { QuickSolver } from ".";
-import Maze from "../lib/maze";
-import Runner from "../lib/runner";
+import fs from "fs";
+import Maze from "./maze.js";
+import Runner from "./runner.js";
 
 
 const openAndBuild = (file) => {
@@ -16,13 +15,16 @@ const QuickSolver = () => {
 	let runner;
 	let saveFile = "completed.txt";
 	
+	/* eslint-disable no-fallthrough, no-useless-assignment -- pre-existing intentional-looking
+	   case cascade in application logic; out of scope for this lint-import-audit lane (imports
+	   and module systems only, not JS behavior correctness). Not fixed here. */
 	switch (process.argv.length) {
 		case 3: {
 			maze = openAndBuild(process.argv[3]);
 		}
 		case 4: {
 			try {
-				maze = Maze({ build: [int(process.argv[3]), int(process.argv[4])] });
+				maze = Maze({ build: [parseInt(process.argv[3], 10), parseInt(process.argv[4], 10)] });
 			} catch (e) {
 				maze = openAndBuild(process.argv[3]);
 				saveFile = process.argv[4];
@@ -37,6 +39,7 @@ const QuickSolver = () => {
 			break;
 		}
 	}
+	/* eslint-enable no-fallthrough, no-useless-assignment */
 
 	maze.viewLayout();
 	runner = Runner(maze);

@@ -1,4 +1,4 @@
-const Node = require("./node");
+import Node from "./node.js";
 
 const Runner = (maze) => {
 	let r = {

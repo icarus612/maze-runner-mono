@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install": "py-install",
     "build": "py-build", 
     "lint": "py-lint",
-    "dev": "py-dev"
+    "dev": "py-dev",
+    "test": "py-test"
   },
   "devDependencies": {
     "lib.bash.build-tools": "workspace:*"

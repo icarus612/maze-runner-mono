@@ -12,6 +12,7 @@ class Runner:
         self.completed = False
         self.mapped_maze = []
         self.possible_paths = []
+        self.path = None
         self.get_open_nodes()
         self.find_end_points()
 
@@ -69,8 +70,12 @@ class Runner:
                             self.to_visit.append(i)
 
     def view_completed(self):
+        x = ""
         for i in self.mapped_maze:
-            print(i)
+            x += "".join(i)
+            x += "\n"
+        print(x)
+        return x
 
     def build_path(self, path="x"):
         other_options = ["x", "o", "+", "*", "p"]
@@ -82,7 +87,8 @@ class Runner:
             or path == maze.open_char
         ):
             print(
-                "Path character is already being used as a maze character trying something else..."
+                "Path character is already being used as a maze character "
+                "trying something else..."
             )
             for i in other_options:
                 if (
@@ -96,6 +102,7 @@ class Runner:
                     path = i
                     print(f"New path character: {i}")
                     break
+        self.path = path
         self.mapped_maze = [list(i) for i in maze.layout]
         for i in range(len(self.mapped_maze)):
             for j in range(len(self.mapped_maze[i])):
