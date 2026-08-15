@@ -11,6 +11,9 @@ py-maze-runner = "maze_runner.__main__:main"
 [tool.uv]
 package = true
 
+[dependency-groups]
+dev = ["pytest"]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
